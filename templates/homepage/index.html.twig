@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('password') %}
+    <div class="flash-notice alert alert-sucess">
+        {{ message }}
+    </div>
+{% endfor %}
+<div class="mb-3">
+    {% if not app.user %}
+        <h1>Bienvenue, veuillez vous connecter !</h1>
+    {% endif %}
+
+    {% if app.user %}
+        <h1>Bienvenue {{ app.user.firstname }} {{ app.user.lastname }},</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
