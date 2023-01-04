@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+
 
 class ChangePasswordType extends AbstractType
 {
@@ -21,6 +23,9 @@ class ChangePasswordType extends AbstractType
                 'invalid_message' => 'Le mdp doit être identique au mdp de confirmation.',
                 'label' => 'Mot de passe',
                 'required' => true,
+                'constraints' => new Length([
+                    'min' => 8,
+                ]),
                 'first_options' => ['label' => 'Saisis ton mdp'],
                 'second_options' => ['label' => 'Confirmes ton mdp']                
             ])

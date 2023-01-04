@@ -52,6 +52,9 @@ class RegisterType extends AbstractType
                 'invalid_message' => 'Le mdp doit être identique au mdp de confirmation.',
                 'label' => 'Mot de passe',
                 'required' => true,
+                'constraints' => new Length([
+                    'min' => 8,
+                ]),
                 'first_options' => ['label' => 'Saisis ton mdp'],
                 'second_options' => ['label' => 'Confirmes ton mdp']                
             ])

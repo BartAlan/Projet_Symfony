@@ -16,6 +16,7 @@
 
     {% if app.user %}
         <h1>Bienvenue {{ app.user.firstname }} {{ app.user.lastname }},</h1>
+        <a href="{{ path('app_account') }}">Accéder à votre page de profil</a>
     {% endif %}
 </div>
 
